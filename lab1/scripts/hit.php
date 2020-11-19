@@ -23,7 +23,6 @@ function isValid($X, $Y, $R)
 
 function isInArea($X, $Y, $R)
 {
-
     $X = floatval($X);
     $Y = floatval($Y);
     $R = floatval($R);
@@ -47,18 +46,18 @@ if (isValid($X, $Y, $R)) {
     } else {
         $isHit = "No";
     }
+    $responseJSON ="{\"X\" : {$X},
+                    \"Y\" : {$Y},
+                    \"R\" : {$R},
+                    \"Hit\" : \"{$isHit}\",
+                    \"Runtime\" : 0,
+                    \"Request start time\": 0}";
 
-    echo json_encode(
-        array("X" => $X,
-            "Y" => $Y,
-            "R" => $R,
-            "Hit" => $isHit,
-            "Runtime" => 0,
-            "Request start time" => 0)
-    );
+    echo $responseJSON;
 }
 else{
-    echo "invalid data";
+    header('HTTP/1.0 404 not found');
+    exit();
 }
 
 ?>

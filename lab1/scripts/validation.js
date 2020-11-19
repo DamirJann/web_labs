@@ -96,8 +96,6 @@ function validateForm(event){
                 updateTable(responseJson);
             }
         });
-
-
     }
 }
 
