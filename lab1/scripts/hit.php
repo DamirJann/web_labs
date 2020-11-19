@@ -3,11 +3,14 @@ function isValid($X, $Y, $R)
 {
     $xRange = [];
     $rRange = [];
+    for ($i = -5; $i <= 4; $i++) array_push($xRange, $i);
+    for ($i = 1; $i <= 3; $i+=0.5) array_push($rRange, $i);
+
+    if (strlen($X) > 10 or strlen($Y) > 10 or strlen($R) > 10) return false;
+
     $X = floatval($X);
     $Y = floatval($Y);
     $R = floatval($R);
-    for ($i = -5; $i <= 3; $i++) array_push($xRange, $i);
-    for ($i = 1; $i <= 3; $i+=0.5) array_push($rRange, $i);
 
     if (isset($X) and isset($Y) and isset($R) and
         in_array($X, $xRange) and ($Y <= 5) and ($Y >= -3) and in_array($R, $rRange)){
@@ -25,31 +28,38 @@ function isInArea($X, $Y, $R)
     $Y = floatval($Y);
     $R = floatval($R);
 
-    if ($X <= 0 and $X >= -$R and $Y <= 0 and $Y >= -$R) return true;
+    if ($X >= 0 and $X <= $R and $Y <= 0 and $Y >= -$R) return true;
     if ($X <= 0 and $Y <= 0 and $Y >= -$X / 2 - $R / 2) return true;
-    if ($X <= 0 and $Y >= 0 and $R >= $X * $X + $Y * $Y) return true;
+    if ($X <= 0 and $Y >= 0 and $R*$R >= $X * $X + $Y * $Y) return true;
     return false;
 
 }
-
 
 $X = $_REQUEST['X'];
 $Y = $_REQUEST['Y'];
 $R = $_REQUEST['R'];
 
 
-if (isValid($X, $Y, $R) and isInArea($X, $Y, $R)){
-    $isHit = "Yes";
+if (isValid($X, $Y, $R)) {
+
+    if (isInArea($X, $Y, $R)) {
+        $isHit = "Yes";
+    } else {
+        $isHit = "No";
+    }
+
+    echo json_encode(
+        array("X" => $X,
+            "Y" => $Y,
+            "R" => $R,
+            "Hit" => $isHit,
+            "Runtime" => 0,
+            "Request start time" => 0)
+    );
 }
 else{
-    $isHit = "NO";
+    echo "invalid data";
 }
 
-echo "<tr>
-        <td>$X</td> 
-        <td>$Y</td>
-        <td>$R</td>
-        <td>$isHit</td>
-      </tr>"
 ?>
 

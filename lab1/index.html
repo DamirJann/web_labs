@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style.css">
-
+<meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Пилацис Дамир | P33211 | 1024</title>
 </head>
 <body>
 
@@ -22,18 +22,14 @@
     </table>
 
 <table>
-        <td><img src="../res/areas.png"></td>
+        <td><img src="res/areas.png"></td>
         <td>
-            <table id="result" border="1dp" >
+            <table id="table" border="1dp" >
                 <tr>
                     <th>X</th><th>Y</th><th>R</th><th>Попадание</th><th>Время скрипта(мс)</th><th>Время запроса</th>
                 </tr>
-<!--                <tr>-->
-<!--                    <td>1</td> <td>1</td><td>3</td><td>Есть</td><td>12:54</td>-->
-<!--                </tr>-->
             </table>
         </td>
-    </tr>
 </table>
 
     <table>
@@ -72,15 +68,15 @@
 
     <table>
         <tr>
-            <button id="submitButton" type="submit" onsubmit = "validateForm()" form="data">Отправить</button>
+            <button id="submitButton" type="submit" form="data">Отправить</button>
         </tr>
         <tr>
-            <button id="resetButton" type="submit">Очистить</button>
+            <button id="resetButton" type="submit" onclick="dropTable()">Очистить</button>
         </tr>
     </table>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../scripts/validation.js"></script>
+    <script src="scripts/validation.js"></script>
 </body>
 </html>
