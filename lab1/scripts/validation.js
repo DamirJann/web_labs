@@ -81,7 +81,7 @@ function validateForm(event){
         let startTime = new Date();
 
         let response = $.get({
-            url: '../scripts/hit.php',
+            url: 'scripts/hit.php',
             data: data,
             crossDomain: true
         });
@@ -95,8 +95,6 @@ function validateForm(event){
                 responseJson["Request start time"] = getBeautyTime(startTime);
                 updateTable(responseJson);
             }
-
-
         });
 
 
