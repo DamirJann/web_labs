@@ -20,7 +20,7 @@ public class ControllerServlet extends javax.servlet.http.HttpServlet {
             Double y = Double.valueOf(request.getParameter("Y"));
             Double r = Double.valueOf(request.getParameter("R"));
 
-
+   
             ServletContext context = getServletContext();
             RequestDispatcher dispatcher = context.getRequestDispatcher("/area_check");
             dispatcher.forward(request, response);
