@@ -1,0 +1,13 @@
+table{
+    width: auto;
+}
+
+table.td{
+    text-align: start;
+}
+
+
+
+input.invalid {
+    border: 2px dashed red;
+}

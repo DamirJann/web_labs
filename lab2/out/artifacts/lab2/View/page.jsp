@@ -1,0 +1,102 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"
+         isELIgnored="false"%>
+<!DOCTYPE html>
+<html lang="ru">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{pageContext.request.contextPah}/View/css/style.css">
+<title>Пилацис Дамир | P33211 | 1024</title>
+
+<body>
+
+<table>
+    <th>
+        <div style="font-family: 'Monospaced';">ФИО:</div>
+    </th>
+    <td>
+        <div style="font-family: 'Monospaced';">Пилацис Дамир Маратович</div>
+    </td>
+</table>
+
+<table>
+    <th>
+        <div style="font-family: 'Monospaced' ;">Группа:</div>
+    </th>
+    <td>
+        <div style="font-family: 'Monospaced';">P33211</div>
+    </td>
+</table>
+
+<table>
+    <th>
+        <div style="font-family: 'Monospaced' ;">Вариант:</div>
+    </th>
+    <td>
+        <div style="font-family: 'Monospaced';">1024</div>
+    </td>
+</table>
+
+<table>
+    <td><img src="res/areas.png"></td>
+    <td>
+        <table id="table" border="1dp">
+            <tr>
+              <b>$t{pageContext.request.contextPah}css/style.css</b>
+                <th>X</th>
+                <th>Y</th>
+                <th>R</th>
+                <th>Попадание</th>
+                <th>Время скрипта(мс)</th>
+                <th>Время запроса</th>
+            </tr>
+        </table>
+    </td>
+</table>
+
+<table>
+    <tr>
+        <form id="data">
+            <td>
+                X:
+                <select name="X">
+                    <option>-5</option>
+                    <option>-4</option>
+                    <option>-3</option>
+                    <option>-2</option>
+                    <option>-1</option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            <td>
+                Y:
+                <input name="Y">
+            </td>
+            <td>
+                R:
+                <select name="R">
+                    <option>1</option>
+                    <option>1.5</option>
+                    <option>2</option>
+                    <option>2.5</option>
+                    <option>3</option>
+                </select>
+            <td>
+        </form>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <button id="submitButton" type="submit" form="data">Отправить</button>
+    </tr>
+    <tr>
+        <button id="resetButton" type="submit" onclick="dropTable()">Очистить</button>
+    </tr>
+</table>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<%--<script src="scripts/validation.js"></script>--%>
+</body>
+</html>
