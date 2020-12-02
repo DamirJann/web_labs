@@ -1,18 +1,17 @@
 package Controllers;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
-import javax.swing.text.html.Option;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Writer;
-import java.util.HashMap;
-import java.util.Optional;
 
 public class ControllerServlet extends javax.servlet.http.HttpServlet {
 
+    @Override
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-        Writer writer = response.getWriter();
         ServletContext context = getServletContext();
         // try to parse params, else go to start page
 
@@ -27,10 +26,16 @@ public class ControllerServlet extends javax.servlet.http.HttpServlet {
             dispatcher.forward(request, response);
         }
         else {
-            // get context of web
-            RequestDispatcher dispatcher = context.getRequestDispatcher("/View/page.jsp");
+            RequestDispatcher dispatcher = context.getRequestDispatcher("/View/jsp/page.jsp");
             dispatcher.forward(request, response);
         }
 
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ServletContext context = getServletContext();
+        RequestDispatcher dispatcher = context.getRequestDispatcher("/clean");
+        dispatcher.forward(request, response);
     }
 }

@@ -1,3 +1,6 @@
+<%@ page import="beans.ReportsBean" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="beans.ReportBean" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java"
          isELIgnored="false"%>
 <!DOCTYPE html>
@@ -8,8 +11,11 @@
 <title>PilacisAnnDamirSamoylova | P33211 | 1024</title>
 
 <body>
-
+<%--TODO брать бин из score, а не через request.getSession()--%>
+<%--functions for creating html records of hits--%>
 <table>
+
+
     <th>
         <div style="font-family: 'Monospaced';">Name:</div>
     </th>
@@ -36,18 +42,13 @@
     </td>
 </table>
 
+
 <table>
-    <td><img src="./View/res/areas.png" alt="it didn't respond"/></td>
+    <td><img src="./View/res/areas.png" alt="it's not displayed"/></td>
     <td>
         <table id="table" border="1dp">
-            <tr>
-                <th>X</th>
-                <th>Y</th>
-                <th>R</th>
-                <th>Hit</th>
-                <th>Script Time(ms)</th>
-                <th>Time of Request</th>
-            </tr>
+            <%--inlude non-static table.jsp--%>
+            <jsp:include page="table.jsp" />
         </table>
     </td>
 </table>
@@ -58,8 +59,6 @@
             <td>
                 X:
                 <select name="X">
-                    <option>-5</option>
-                    <option>-4</option>
                     <option>-3</option>
                     <option>-2</option>
                     <option>-1</option>
@@ -67,6 +66,8 @@
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
                 </select>
             <td>
                 Y:
@@ -76,10 +77,10 @@
                 R:
                 <select name="R">
                     <option>1</option>
-                    <option>1.5</option>
                     <option>2</option>
-                    <option>2.5</option>
                     <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
                 </select>
             <td>
         </form>
@@ -97,6 +98,6 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="./View/scripts/validation.js"></script>
+<script src="./View/script/validation.js"></script>
 </body>
 </html>

@@ -8,18 +8,31 @@
         <servlet-name>ControllerServlet</servlet-name>
         <servlet-class>Controllers.ControllerServlet</servlet-class>
     </servlet>
+
     <servlet>
         <servlet-name>AreaCheckServlet</servlet-name>
         <servlet-class>Controllers.AreaCheckServlet</servlet-class>
     </servlet>
 
-<!-- connect url and servlets    -->
+    <servlet>
+    <servlet-name>DataDeleteServlet</servlet-name>
+    <servlet-class>Controllers.DataDeleterServlet</servlet-class>
+</servlet>
+
+
+        <!-- connect url and servlets    -->
     <servlet-mapping>
         <servlet-name>ControllerServlet</servlet-name>
         <url-pattern>/start</url-pattern>
     </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>AreaCheckServlet</servlet-name>
         <url-pattern>/area_check</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DataDeleteServlet</servlet-name>
+        <url-pattern>/clean</url-pattern>
     </servlet-mapping>
 </web-app>

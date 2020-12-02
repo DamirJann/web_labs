@@ -1,7 +1,5 @@
 package Controllers;
 
-import java.util.ArrayList;
-
 public class ValidateService {
 
     public boolean isInteger(String number){

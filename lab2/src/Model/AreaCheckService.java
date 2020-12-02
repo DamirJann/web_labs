@@ -1,14 +1,14 @@
 package Model;
 
+import beans.ReportBean;
+import beans.ReportsBean;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class AreaCheckService {
-    Gson gson = new Gson();
-
-
     private boolean isPointInArea(int x, double y, int r) {
         if (x >= 0 && y >= 0.0 && x <= r && y <= r / 2.0)
             return true;
@@ -20,14 +20,12 @@ public class AreaCheckService {
     }
 
     // get json of report
-    public String getHitReport(int x, double y, int r) {
-        Map<String, String> report = new HashMap<>();
-        report.put("X", String.valueOf(x));
-        report.put("Y", String.valueOf(y));
-        report.put("R", String.valueOf(r));
-        report.put("Hit", isPointInArea(x, y, r) ? "YES" : "NO");
-        report.put("Runtime", "0");
-        report.put("Request start time", "0");
-        return gson.toJson(report);
+    public ReportBean getReportBean(int x, double y, int r) {
+        ReportBean reportBean = new ReportBean();
+        reportBean.setX(String.valueOf(x));
+        reportBean.setY(String.valueOf(y));
+        reportBean.setR(String.valueOf(x));
+        reportBean.setHit(isPointInArea(x, y, r) ? "YES" : "NO");
+        return reportBean;
     }
 }

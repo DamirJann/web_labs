@@ -139,6 +139,10 @@ function isValidInput(data){
     y = Number(y);
     r = Number(r);
 
+    if (!isCorrectNumber(x) || !isCorrectNumber(y) || !isCorrectNumber(r)){
+        return false;
+    }
+
     return ((rangeX.indexOf(x) !== -1) &&
             (rangeR.indexOf(r) !== -1) &&
             (-3 <= y) && (y <= 5));
