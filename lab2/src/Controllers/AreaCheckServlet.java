@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class AreaCheckServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext context = getServletContext();
 
         String x = request.getParameter("X");
@@ -29,19 +29,19 @@ public class AreaCheckServlet extends HttpServlet {
                                                                Double.parseDouble(y),
                                                                Integer.parseInt(r));
 
-        // if new session create ReportsBean else get it from session
+        // if it's a new session create ReportsBean
+        // else get it from session
         ReportsBean reportsBean = request.getSession().getAttribute("bean") == null ?
                                      new ReportsBean() :(ReportsBean) request.getSession().getAttribute("bean");
 
-
-
-
-        // add new record
+        // add new record to reportsBean
         reportsBean.getReportBean().add(reportBean);
 
-        // save it to session
+        // save it in session
         request.getSession().setAttribute("bean", reportsBean);
 
+
+        // return changed table
         RequestDispatcher dispatcher = context.getRequestDispatcher("/View/jsp/table.jsp");
         dispatcher.forward(request, response);
     }

@@ -1,10 +1,16 @@
+<%--this is jsp page, which descibes table. This jsp includes in page.jsp--%>
+
 <%@ page import="beans.ReportsBean" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="beans.ReportBean" %>
+<%--get bean from session--%>
+<jsp:useBean id= "bean" scope= "session" class="beans.ReportsBean" />
 
-<%--TODO брать бин из score, а не через request.getSession()--%>
+
 <%--functions for creating html records of hits--%>
 <%!
+
+    // use it in the next method
     public String wrapInTd(ReportBean reportBean){
         return "<td>" + reportBean.getX() + "</td>\n" +
                 "<td>" + reportBean.getY() + "</td>\n" +
@@ -12,6 +18,7 @@
                 "<td>" + reportBean.getHit() + "</td>\n";
     }
 
+    // form table structure from array of ReportBean
     public String wrapInTrTag(ArrayList<ReportBean> reportBeans){
         StringBuilder records = new StringBuilder();
         for (ReportBean report: reportBeans){
@@ -29,11 +36,12 @@
     <th>R</th>
     <th>Hit</th>
 </tr>
+
 <%--create records using methods upper--%>
 <%
-    Object userHitsBean =  request.getSession().getAttribute("bean");
+    ReportsBean userHitsBean =  bean;
     if (userHitsBean != null){
-        ArrayList<ReportBean> reportBeans = ((ReportsBean) userHitsBean).getReportBean();
+        ArrayList<ReportBean> reportBeans = userHitsBean.getReportBean();
         out.write(wrapInTrTag(reportBeans));
     }
 %>`

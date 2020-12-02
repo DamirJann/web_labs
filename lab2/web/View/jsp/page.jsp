@@ -2,7 +2,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="beans.ReportBean" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java"
-         isELIgnored="false"%>
+         isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="ru">
 <meta charset="UTF-8">
@@ -11,8 +11,6 @@
 <title>PilacisAnnDamirSamoylova | P33211 | 1024</title>
 
 <body>
-<%--TODO брать бин из score, а не через request.getSession()--%>
-<%--functions for creating html records of hits--%>
 <table>
 
 
@@ -48,7 +46,7 @@
     <td>
         <table id="table" border="1dp">
             <%--inlude non-static table.jsp--%>
-            <jsp:include page="table.jsp" />
+            <jsp:include page="table.jsp"/>
         </table>
     </td>
 </table>

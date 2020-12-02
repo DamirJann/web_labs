@@ -1,14 +1,14 @@
-// TODO replace get on post
 function dropTable(){
     $.ajax({
         type: "DELETE",
         url: 'http://localhost:8080/lab2_war_exploded/start',
-        crossDomain: true,
-        success: function(result){
-            dropTable()
-        }
+        crossDomain: true
     });
+    let nodes = $("#table tr");
+    for (let i = nodes.length-1; i > 0; i--){
+        nodes[i].remove();
 
+    }
 }
 
 
@@ -38,12 +38,13 @@ function validateForm(event){
     }
     else {
         // make request do add .
-        let response = $.get({
+        let request =$.ajax({
+            type: "POST",
             url: 'http://localhost:8080/lab2_war_exploded/start',
             data: data,
-            crossDomain: true
+            crossDomain: true,
         });
-        response.done(function (response){
+        request.done(function(response, textStatus, jqXHR){
             $("#table").html(response);
         });
     }
