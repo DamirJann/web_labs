@@ -1,8 +1,10 @@
-### Send POST request with body as parameters
-POST http://localhost:8080/lab2_war_exploded/start
-Content-Type: application/x-www-form-urlencoded
+GET http://localhost:80/api/item?id=99
+Accept: application/json
 
-X=3&Y=4&R=34
+###
+### Send POST request with body as parameters
+GET http://localhost:8080/lab2_war_exploded/start?X=3&Y=2&R=1
+Content-Type: application/x-www-form-urlencoded
 
 ###
 

@@ -3,23 +3,24 @@
 <!DOCTYPE html>
 <html lang="ru">
 <meta charset="UTF-8">
-<link rel="stylesheet" href="{pageContext.request.contextPath}/View/css/style.css">
-<title>Пилацис Дамир | P33211 | 1024</title>
+<link href="./View/css/style.css" rel="stylesheet">
+
+<title>PilacisAnnDamirSamoylova | P33211 | 1024</title>
 
 <body>
 
 <table>
     <th>
-        <div style="font-family: 'Monospaced';">ФИО:</div>
+        <div style="font-family: 'Monospaced';">Name:</div>
     </th>
     <td>
-        <div style="font-family: 'Monospaced';">Пилацис Дамир Маратович</div>
+        <div style="font-family: 'Monospaced';">PilacisAnnDamirSamoylova</div>
     </td>
 </table>
 
 <table>
     <th>
-        <div style="font-family: 'Monospaced' ;">Группа:</div>
+        <div style="font-family: 'Monospaced' ;">Group:</div>
     </th>
     <td>
         <div style="font-family: 'Monospaced';">P33211</div>
@@ -28,7 +29,7 @@
 
 <table>
     <th>
-        <div style="font-family: 'Monospaced' ;">Вариант:</div>
+        <div style="font-family: 'Monospaced' ;">Variant:</div>
     </th>
     <td>
         <div style="font-family: 'Monospaced';">1024</div>
@@ -36,17 +37,16 @@
 </table>
 
 <table>
-    <td><img src="res/areas.png"></td>
+    <td><img src="./View/res/areas.png" alt="it didn't respond"/></td>
     <td>
         <table id="table" border="1dp">
             <tr>
-              <b>$t{pageContext.request.contextPath}css/style.css</b>
                 <th>X</th>
                 <th>Y</th>
                 <th>R</th>
-                <th>Попадание</th>
-                <th>Время скрипта(мс)</th>
-                <th>Время запроса</th>
+                <th>Hit</th>
+                <th>Script Time(ms)</th>
+                <th>Time of Request</th>
             </tr>
         </table>
     </td>
@@ -70,7 +70,7 @@
                 </select>
             <td>
                 Y:
-                <input name="Y">
+                <input name="Y" id="submitY">
             </td>
             <td>
                 R:
@@ -88,15 +88,15 @@
 
 <table>
     <tr>
-        <button id="submitButton" type="submit" form="data">Отправить</button>
+        <button id="submitButton" type="submit" form="data">Send</button>
     </tr>
     <tr>
-        <button id="resetButton" type="submit" onclick="dropTable()">Очистить</button>
+        <button id="resetButton" type="submit" onclick="dropTable()">Clear</button>
     </tr>
 </table>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<%--<script src="scripts/validation.js"></script>--%>
+<script src="./View/scripts/validation.js"></script>
 </body>
 </html>

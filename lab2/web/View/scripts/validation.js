@@ -80,8 +80,8 @@ function validateForm(event){
     event.preventDefault();
     let form = event.target;
     let data = {"X":form.elements['X'].value,
-                "Y": form.elements['Y'].value,
-                "R":form.elements['R'].value
+        "Y": form.elements['Y'].value,
+        "R":form.elements['R'].value
     };
     if (!isValidInput(data)){
         makeWarn(form.elements['Y']);
@@ -89,7 +89,7 @@ function validateForm(event){
     else {
         let startTime = new Date();
         let response = $.get({
-            url: 'scripts/hit.php',
+            url: 'http://localhost:8080/lab2_war_exploded/start',
             data: data,
             crossDomain: true
         });
@@ -125,7 +125,7 @@ function isCorrectNumber(numberStr){
 
 function isValidInput(data){
     const rangeX = [-5, -4,-3 , -2, -1, 0, 1, 2, 3, 4];
-    const rangeR = [1, 1.5, 2, 2.5, 3];
+    const rangeR = [1, 2, 3, 4, 5];
 
     let x = data["X"];
     let y = data["Y"];
@@ -140,8 +140,8 @@ function isValidInput(data){
     r = Number(r);
 
     return ((rangeX.indexOf(x) !== -1) &&
-            (rangeR.indexOf(r) !== -1) &&
-            (-3 <= y) && (y <= 5));
+        (rangeR.indexOf(r) !== -1) &&
+        (-3 <= y) && (y <= 5));
 }
 
 function fillTable(){

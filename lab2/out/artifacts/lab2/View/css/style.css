@@ -1,7 +1,9 @@
 table{
     width: auto;
 }
-
+.b{
+    color:red;
+}
 table.td{
     text-align: start;
 }

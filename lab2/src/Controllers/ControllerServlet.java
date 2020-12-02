@@ -13,22 +13,24 @@ public class ControllerServlet extends javax.servlet.http.HttpServlet {
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         Writer writer = response.getWriter();
-
+        ServletContext context = getServletContext();
         // try to parse params, else go to start page
-        try {
-            Double x = Double.valueOf(request.getParameter("X"));
-            Double y = Double.valueOf(request.getParameter("Y"));
-            Double r = Double.valueOf(request.getParameter("R"));
 
+        String x = request.getParameter("X");
+        String y = request.getParameter("Y");
+        String r = request.getParameter("R");
 
-            ServletContext context = getServletContext();
+        ValidateService validateService = new ValidateService();
+
+        if (validateService.isValidInput(x, y, r)) {
             RequestDispatcher dispatcher = context.getRequestDispatcher("/area_check");
             dispatcher.forward(request, response);
-
-        } catch (Exception e) {
-            ServletContext context = getServletContext();
+        }
+        else {
+            // get context of web
             RequestDispatcher dispatcher = context.getRequestDispatcher("/View/page.jsp");
             dispatcher.forward(request, response);
         }
+
     }
 }
