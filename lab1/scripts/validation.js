@@ -162,4 +162,5 @@ function fillTable(){
 
 // листенеры
 window.addEventListener("load", fillTable);
+document.getElementById("submitY").addEventListener("focus", removeWarn);
 $("#data")[0].addEventListener("submit", validateForm);
