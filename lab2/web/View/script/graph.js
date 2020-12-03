@@ -19,9 +19,9 @@ ctx.translate(canvas_width/2, canvas_height/2);
 
 //рисуем отметки
 var step = canvas_width/10;
-move(-canvas_width/2, 0);
 for (let i = -5; i <= 5; i++) {
-    ctx.lineTo()
+    move(i*step, -3);
+    ctx.lineTo(i*step, 3);
 }
 
 ctx.strokeStyle = ("#000000");
