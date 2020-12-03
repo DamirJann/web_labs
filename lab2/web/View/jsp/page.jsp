@@ -42,7 +42,8 @@
 
 
 <table>
-    <td><img src="./View/res/areas.png" alt="it's not displayed"/></td>
+
+<%--    <td><img src="./View/res/areas.png" alt="it's not displayed"/></td>--%>
     <td>
         <table id="table" border="1dp">
             <%--inlude non-static table.jsp--%>
