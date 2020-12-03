@@ -45,6 +45,7 @@
 
 <%--    <td><img src="./View/res/areas.png" alt="it's not displayed"/></td>--%>
     <td>
+        <jsp:include page="graph.jsp"/>
         <table id="table" border="1dp">
             <%--inlude non-static table.jsp--%>
             <jsp:include page="table.jsp"/>
@@ -98,5 +99,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="./View/script/validation.js"></script>
+<script src="./View/script/graph.js"></script>
 </body>
 </html>
