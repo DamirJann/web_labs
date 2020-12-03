@@ -26,7 +26,7 @@ public class ControllerServlet extends javax.servlet.http.HttpServlet {
         String r = request.getParameter("R");
 
         ServletContext context = getServletContext();
-        ValidateService validateService = new ValidateService();
+        Controllers.ValidateService validateService = new Controllers.ValidateService();
 
         // if data is valid then direct to AreaCheckServlet.
         if (validateService.isValidInput(x, y, r)) {
