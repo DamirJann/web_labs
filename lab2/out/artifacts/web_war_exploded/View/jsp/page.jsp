@@ -42,8 +42,6 @@
 
 
 <table>
-
-<%--    <td><img src="./View/res/areas.png" alt="it's not displayed"/></td>--%>
     <td>
         <canvas width="440px" height="440px" id="graph"></canvas>
     </td>
@@ -59,23 +57,6 @@
     <tr>
         <form id="data">
             <td>
-                X:
-                <select name="X">
-                    <option>-3</option>
-                    <option>-2</option>
-                    <option>-1</option>
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            <td>
-                Y:
-                <input name="Y" id="submitY">
-            </td>
-            <td>
                 R:
                 <select name="R" id = "rValue">
                     <option>1</option>
@@ -90,9 +71,6 @@
 </table>
 
 <table>
-    <tr>
-        <button id="submitButton" type="submit" form="data">Send</button>
-    </tr>
     <tr>
         <button id="resetButton" type="submit" onclick="dropTable()">Clear</button>
     </tr>

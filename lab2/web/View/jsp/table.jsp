@@ -44,4 +44,4 @@
         ArrayList<ReportBean> reportBeans = userHitsBean.getReportBean();
         out.write(wrapInTrTag(reportBeans));
     }
-%>`
+%>
