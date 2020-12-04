@@ -25,7 +25,7 @@ public class AreaCheckServlet extends HttpServlet {
 
 
         AreaCheckService areaCheckService = new AreaCheckService();
-        ReportBean reportBean = areaCheckService.getReportBean(Integer.parseInt(x),
+        ReportBean reportBean = areaCheckService.getReportBean(Double.parseDouble(x),
                                                                Double.parseDouble(y),
                                                                Integer.parseInt(r));
 

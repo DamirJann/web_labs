@@ -8,8 +8,7 @@ public class ValidateService {
 
     public boolean isValidInput(String x, String y, String r){
         try{
-            if (!isInteger(x)) return false;
-            if (Integer.parseInt(x) < -3 || Integer.parseInt(x) > 5) return false;
+            if (Double.parseDouble(x) < -3 || Double.parseDouble(x) > 5) return false;
 
             if (Double.parseDouble(y) < -3 || Double.parseDouble(y) > 5) return false;
 

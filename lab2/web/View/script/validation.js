@@ -1,7 +1,7 @@
 function dropTable(){
     $.ajax({
         type: "DELETE",
-        url: 'http://localhost:8080/lab2_war_exploded/start',
+        url: 'http://localhost:8080/start',
         crossDomain: true
     });
     let nodes = $("#table tr");
@@ -9,6 +9,7 @@ function dropTable(){
         nodes[i].remove();
 
     }
+    refreshGraph();
 }
 
 
@@ -40,7 +41,7 @@ function validateForm(event){
         // make request do add .
         let request =$.ajax({
             type: "POST",
-            url: 'http://localhost:8080/lab2_war_exploded/start',
+            url: 'http://localhost:8080/start',
             data: data,
             crossDomain: true,
         });
@@ -62,31 +63,12 @@ function isCorrectNumber(numberStr){
 }
 
 function isValidInput(data){
-    const rangeX = [-3 , -2, -1, 0, 1, 2, 3, 4, 5];
     const rangeR = [1, 2, 3, 4, 5];
-
-    let x = data["X"];
-    let y = data["Y"];
     let r = data["R"];
-
-    if (x.length > 10 || y.length > 10 || r.length > 10){
-        return false;
-    }
-
-    // check on spaces and so on...
-    if (!isCorrectNumber(x) || !isCorrectNumber(y) || !isCorrectNumber(r)){
-        return false;
-    }
-
-    x = Number(x);
-    y = Number(y);
     r = Number(r);
 
-    return ((rangeX.indexOf(x) !== -1) &&
-        (rangeR.indexOf(r) !== -1) &&
-        (-3 <= y) && (y <= 5));
+    return (rangeR.indexOf(r) !== -1);
 }
-
 
 // листенеры
 document.getElementById("submitY").addEventListener("focus", removeWarn);

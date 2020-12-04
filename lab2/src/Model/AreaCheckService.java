@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AreaCheckService {
-    private boolean isPointInArea(int x, double y, int r) {
+    private boolean isPointInArea(double x, double y, int r) {
         if (x >= 0 && y >= 0.0 && x <= r && y <= r / 2.0)
             return true;
         if (x <= 0 && y >= 0 && y <= 2.0 * x + r * 1.0)
@@ -19,11 +19,11 @@ public class AreaCheckService {
     }
 
     // get json of report
-    public ReportBean getReportBean(int x, double y, int r) {
+    public ReportBean getReportBean(double x, double y, int r) {
         ReportBean reportBean = new ReportBean();
         reportBean.setX(String.valueOf(x));
         reportBean.setY(String.valueOf(y));
-        reportBean.setR(String.valueOf(x));
+        reportBean.setR(String.valueOf(r));
         reportBean.setHit(isPointInArea(x, y, r) ? "YES" : "NO");
         return reportBean;
     }
