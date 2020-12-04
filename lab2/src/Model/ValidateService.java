@@ -1,4 +1,4 @@
-package Controllers;
+package Model;
 
 public class ValidateService {
 

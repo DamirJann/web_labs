@@ -1,12 +1,13 @@
 package Controllers;
 
+import Model.ValidateService;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.Writer;
 
 
 // main controller, which direct request to another servlets
@@ -26,7 +27,7 @@ public class ControllerServlet extends javax.servlet.http.HttpServlet {
         String r = request.getParameter("R");
 
         ServletContext context = getServletContext();
-        Controllers.ValidateService validateService = new Controllers.ValidateService();
+        ValidateService validateService = new ValidateService();
 
         // if data is valid then direct to AreaCheckServlet.
         if (validateService.isValidInput(x, y, r)) {
