@@ -1,0 +1,23 @@
+### Send POST request with body as parameters
+GET http://localhost:8080/start
+Content-Type: application/x-www-form-urlencoded
+
+X=3&Y=4&R=1
+
+###
+
+### Send POST request with body as parameters
+POST http://localhost:8080//start
+Content-Type: application/x-www-form-urlencoded
+
+X=3&Y=   ..1&R=1
+
+###
+
+### Send POST request with body as parameters
+POST http://localhost:8080/lab2_war_exploded/start
+Content-Type: application/x-www-form-urlencoded
+
+#X=4&Y=2&R=3
+
+###
