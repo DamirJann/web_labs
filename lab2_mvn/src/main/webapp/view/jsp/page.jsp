@@ -1,4 +1,4 @@
-<%@ page import="beans.ReportsBean" %>
+<%@ page import="beans.ReportBeans" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="beans.ReportBean" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java"
@@ -56,15 +56,13 @@
 <table>
     <tr>
         <form id="data">
-            <td>
+            <td id="rValue">
                 R:
-                <select name="R" id = "rValue">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+                <p><input name="R" type="radio" value="1" checked onclick="refreshGraph()">1</p>
+                <p><input name="R" type="radio" value="2" onclick="refreshGraph()">2</p>
+                <p><input name="R" type="radio" value="3" onclick="refreshGraph()">3</p>
+                <p><input name="R" type="radio" value="4" onclick="refreshGraph()">4</p>
+                <p><input name="R" type="radio" value="5" onclick="refreshGraph()">5</p>
             <td>
         </form>
     </tr>

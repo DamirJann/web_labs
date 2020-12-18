@@ -2,7 +2,7 @@ package Controllers;
 
 import Model.AreaCheckService;
 import beans.ReportBean;
-import beans.ReportsBean;
+import beans.ReportBeans;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.Writer;
-import java.util.ArrayList;
 
 public class AreaCheckServlet extends HttpServlet {
 
@@ -31,14 +29,14 @@ public class AreaCheckServlet extends HttpServlet {
 
         // if it's a new session create ReportsBean
         // else get it from session
-        ReportsBean reportsBean = request.getSession().getAttribute("bean") == null ?
-                                     new ReportsBean() :(ReportsBean) request.getSession().getAttribute("bean");
+        ReportBeans reportBeans = request.getSession().getAttribute("bean") == null ?
+                                     new ReportBeans() :(ReportBeans) request.getSession().getAttribute("bean");
 
         // add new record to reportsBean
-        reportsBean.getReportBean().add(reportBean);
+        reportBeans.getReportBeans().add(reportBean);
 
         // save it in session
-        request.getSession().setAttribute("bean", reportsBean);
+        request.getSession().setAttribute("bean", reportBeans);
 
 
         // return changed table

@@ -1,0 +1,7 @@
+Controllers\ControllerServlet.class
+Model\ValidateService.class
+beans\ReportsBean.class
+Model\AreaCheckService.class
+Controllers\DataDeleterServlet.class
+beans\ReportBean.class
+Controllers\AreaCheckServlet.class

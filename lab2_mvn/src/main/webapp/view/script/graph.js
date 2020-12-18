@@ -78,14 +78,14 @@ function drawPointByClick(event) {
     let data = {
         "X": (event.layerX - canvas_width / 2) / 40,
         "Y": -(event.layerY - canvas_height / 2) / 40,
-        "R": $("#rValue")[0].value
+        "R": $('input[name=R]:checked').val()
     };
 
     if (isValidInput(data)) {
         // make request do add .
         let request = $.ajax({
             type: "POST",
-            url: 'https://damp-brushlands-79183.herokuapp.com/start',
+            url: '/start',
             data: data,
             crossDomain: true,
         });
@@ -128,15 +128,16 @@ function drawOldPoints() {
 }
 
 function refreshGraph() {
-    drawGraph($("#rValue")[0].value);
+    drawGraph($('input[name=R]:checked').val());
     drawOldPoints();
 }
 
 
 
-drawGraph($("#rValue")[0].value);
+drawGraph($('input[name=R]:checked').val());
 drawOldPoints();
 
 // листенеры
 document.getElementById("graph").addEventListener("click", drawPointByClick);
-document.getElementById("rValue").addEventListener("change", refreshGraph);
+
+// document.getElement("rValue")addEventListener("change", refreshGraph);

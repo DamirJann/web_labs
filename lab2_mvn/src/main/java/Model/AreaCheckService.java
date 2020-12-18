@@ -1,11 +1,6 @@
 package Model;
 
 import beans.ReportBean;
-import beans.ReportsBean;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class AreaCheckService {
     private boolean isPointInArea(double x, double y, int r) {

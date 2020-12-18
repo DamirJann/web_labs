@@ -1,7 +1,7 @@
 function dropTable() {
     $.ajax({
         type: "DELETE",
-        url: 'https://damp-brushlands-79183.herokuapp.com/start',
+        url: '/start',
         crossDomain: true
     });
     let nodes = $("#table tr");
