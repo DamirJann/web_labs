@@ -1,0 +1,27 @@
+
+.head{
+    margin-left: 40px;
+}
+
+#authorization{
+    margin-left: 30px;
+    margin-top:20px;
+    horiz-align: right;
+    width:200px;
+    text-align: center;
+}
+
+
+
+#button_block{
+    margin-top: 5px;
+}
+
+button{
+    margin-top: 10px;
+}
+
+input{
+    margin-top: 10px;
+}
+
