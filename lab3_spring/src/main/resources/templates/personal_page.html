@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<link href="/css/personal_page.css" rel="stylesheet">
+<body>
+
+
+    <div class = "head">
+        <h1>Dead Journal</h1>
+    </div>
+
+
+    <div id="title_head">
+        <span id = "profile">Профиль</span>
+        <span id = "personal_blog">Мой блог</span>
+        <span id = "friends">Блоги друзей</span>
+    </div>
+
+
+    <div id="user_info">
+        <h3 th:text = "${user.nickname}" />
+        <div id="description">
+            <div class="title">
+               <h4>Обо мне</h4>
+            </div>
+            <div class = "text">
+                <p th:text = "${user.description}" />
+            </div>
+        </div>
+
+        <button>изменить</button>
+        <form id="logout" th:action="@{/logout}" method="post">
+            <input type="submit" value="покинуть"/>
+        </form>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/templates/js/personal_page.js"></script>
+</html>

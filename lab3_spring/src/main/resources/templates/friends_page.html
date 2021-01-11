@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<link href="../static/css/friends_page.css" rel="stylesheet">
+<body>
+
+
+    <div class = "head">
+        <h1>Dead Journal</h1>
+    </div>
+
+
+    <div id="title_head">
+        <span th:href="@{'/category/edit/'}">Профиль</span>
+        <span>Мой блог</span>
+        <span>Блоги друзей</span>
+    </div>
+
+
+    <div id="friends">
+<!--        <h3 th:text = "${a+' - "/>-->
+        <ul>
+            <li>
+                <h3>Dostoevskiy</h3>
+                <text>
+                    О человеке, его несчастиях и счастиях в
+                    поиске отца своего Господа Бога .
+                </text>
+            </li>
+
+            <li>
+                <h3>Chechov</h3>
+                <text>
+                    Все бы мы могли стать Шопенгаурами, Достоевскими, но...
+                    Должно быть станем. Только уже там, где небо в будет в алмазах, а не здесь.
+                </text>
+            </li>
+
+
+        </ul>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<link href="/static/css/home.css" rel="stylesheet">
+<body>
+
+
+<div class = "head">
+    <h1>Dead Journal</h1>
+</div>
+
+
+<div id = "authorization">
+<!--    TODO сделать текст в полях логин, пароль-->
+    <form id="data" th:action="@{/sign-up}" method="post">
+
+        <div id = "login">
+            <input type="text" th:name="username">
+        </div>
+
+        <div id = "password">
+            <input type="text"  th:name="password">
+        </div>
+
+        <div id = "nickname">
+            <input type="text"  th:name="nickname">
+        </div>
+
+    </form>
+
+    <div id="button_block">
+        <div>
+            <button form="data" id = "sign_in" type="submit">
+                Войти
+            </button>
+        </div>
+        <div>
+            <button id="sign_up" th:action="@{user/signup}">
+                Зарегистрироваться
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
