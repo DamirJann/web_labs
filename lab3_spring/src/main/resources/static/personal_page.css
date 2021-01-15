@@ -40,3 +40,29 @@ body{
 #friends_block{
     margin-left: -25px;
 }
+
+#friends_block a{
+    color: black;
+}
+
+.highlighted{
+    text-decoration: underline;
+    color: rgba(26, 26, 26, 0.99)
+}
+
+#cancel{
+    margin-left: 20px;
+}
+
+
+#blogs{
+    margin-top:40px;
+}
+
+#blogs ul{
+    margin-left: -23px;
+}
+
+#blogs a{
+    color: black;
+}

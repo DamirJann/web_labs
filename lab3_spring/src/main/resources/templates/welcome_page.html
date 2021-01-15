@@ -4,7 +4,7 @@
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<link href="/home.css" type="text/css" rel="stylesheet">
+<link href="/welcome-page.css" type="text/css" rel="stylesheet">
 <body>
 
 
@@ -17,11 +17,11 @@
 <!--    TODO сделать текст в полях логин, пароль-->
     <form id="data" th:action="@{/login}" method="post">
         <div id = "login">
-            <input type="text" th:name="username">
+            <input type="text" th:name="username" placeholder="почта">
         </div>
 
         <div id = "password">
-            <input type="text"  th:name="password">
+            <input type="text"  th:name="password" placeholder="пароль">
         </div>
     </form>
 
@@ -32,9 +32,9 @@
             </button>
         </div>
         <div>
-            <button id="sign_up" th:action="@{user/signup}">
-                Зарегистрироваться
-            </button>
+            <form action="dead-journal/signup_page">
+                <input type="submit" value="Зарегистрироваться" />
+            </form>
         </div>
     </div>
 </div>

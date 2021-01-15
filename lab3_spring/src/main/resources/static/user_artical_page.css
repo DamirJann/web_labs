@@ -1,0 +1,41 @@
+
+body{
+    padding-left: 30px;
+}
+
+
+#block_container{
+    margin-top: 50px;
+}
+
+
+#friends_block{
+    margin-left: -25px;
+}
+
+
+div.inline{
+    float:left;
+}
+
+#deleteButton{
+    margin-top:40px;
+}
+
+
+#back_button{
+    margin-top:10px;
+}
+
+#text{
+    /*width:200px;*/
+    max-width: 300px;
+
+}
+
+
+#deleteButton input{
+    background-color: white;
+    border: 1px dashed #e80308;
+    border-radius: 5px;
+}

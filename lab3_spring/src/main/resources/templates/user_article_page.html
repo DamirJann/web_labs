@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<link href="/user_artical_page.css" rel="stylesheet">
+<body>
+
+
+    <div class = "head">
+        <h1>Dead Journal</h1>
+    </div>
+
+    <div id = "block_container">
+        <div id="user_article">
+            <h3 th:text = "${article.title}" />
+            <div class = "text">
+                <p th:text = "${article.fullText}" />
+            </div>
+            <div th:if="${isOwner}" id="deleteButton" >
+                <form th:onclick="deleteArticle([[${article.id}]],[[${article.user.nickname}]] );">
+                    <input type="submit" value="удалить"/>
+                </form>
+            </div>
+
+            <div  id="back_button" th:if="${isOwner}" >
+                <form action='/dead-journal' th:method="post">
+                    <button name="navigation_state" value="2">вернуться</button>
+                </form>
+            </div>
+
+
+            <div  id="back_button" th:if="${not isOwner}" >
+                <form th:action="'/dead-journal/' + ${article.user.nickname}">
+                    <button >вернуться</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/user_article_page.js"></script>
+</html>

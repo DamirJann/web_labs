@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+
+
+<form id="newArticle" th:action="@{dead-journal/new_article}" method="get">
+    <input type="submit" value="Новая статья"/>
+</form>
+
+</button>
+<div id = "block_container">
+    <div id="blogs">
+        <h3 th:text="'Всего статей: ' + ${articleCount}"></h3>
+        <ul>
+            <li th:each="article: ${user.articleList}">
+                <a th:href= "@{/dead-journal/{nickname}/article/{articleId}(nickname=${user.nickname}, articleId=${article.id})}">
+                    <h4 class = "title" th:text="${article.title}"></h4>
+                </a>
+                <text th:text="${article.description}"></text>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+

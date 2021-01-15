@@ -1,79 +1,58 @@
 package com.example.demo.entity;
 
-import org.hibernate.annotations.Fetch;
-import org.springframework.context.annotation.Lazy;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "user", schema = "public")
-public class User implements Serializable, UserDetails {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Getter
+    @Setter
     private Long id;
+    @Getter
+    @Setter
     private String password;
-    @Column(unique=true)
+    @Column(unique = true)
+    @Getter
+    @Setter
     private String email;
+    @Getter
+    @Setter
     private boolean enabled;
+    @Getter
+    @Setter
     private String nickname;
+    @Getter
+    @Setter
     private String description;
 
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    @Getter
+    @Setter
+    private Set<Article> articleList = new HashSet<>();
 
     public User() {
     }
-
-
-    public User(String email, String password) {
+    public User(String email, String password, String nickname) {
         this.email = email;
         this.password = password;
+        this.nickname = nickname;
         this.enabled = true;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled){
-        this.enabled = enabled;
-    }
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     @Override
@@ -96,15 +75,6 @@ public class User implements Serializable, UserDetails {
         return true;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
+
+// Побликуюсь почти нигде. Но волнует это меня не больше, чем перспектива собственной смерти

@@ -4,7 +4,7 @@
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<link href="/static/css/home.css" rel="stylesheet">
+<link href="/signup_page.css" rel="stylesheet">
 <body>
 
 
@@ -14,33 +14,25 @@
 
 
 <div id = "authorization">
-<!--    TODO сделать текст в полях логин, пароль-->
-    <form id="data" th:action="@{/sign-up}" method="post">
+    <form id="data" action="signup" method="post">
 
         <div id = "login">
-            <input type="text" th:name="username">
+            <input type="text" th:name="email" placeholder="почта">
         </div>
 
         <div id = "password">
-            <input type="text"  th:name="password">
+            <input type="text"  th:name="password"  th:placeholder="пароль">
         </div>
 
         <div id = "nickname">
-            <input type="text"  th:name="nickname">
+            <input type="text"  th:name="nickname" placeholder="ник">
         </div>
 
     </form>
 
     <div id="button_block">
         <div>
-            <button form="data" id = "sign_in" type="submit">
-                Войти
-            </button>
-        </div>
-        <div>
-            <button id="sign_up" th:action="@{user/signup}">
-                Зарегистрироваться
-            </button>
+            <input form="data" type="submit" value="Зарегистрироваться" th:method="post" />
         </div>
     </div>
 </div>

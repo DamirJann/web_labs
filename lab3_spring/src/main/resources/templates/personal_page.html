@@ -14,29 +14,32 @@
 
 
     <div id="title_head">
-        <span id = "personal_page" >Профиль</span>
-        <span id = "personal_blog">Мой блог</span>
-        <span id = "friends">Блоги друзей</span>
+        <span id = "profile" th:classappend="${navigation_state == 1} ? highlighted">Профиль</span>
+        <span id = "personal_blog" th:classappend="${navigation_state == 2} ? highlighted">Мой блог</span>
+        <span id = "friends" th:classappend="${navigation_state == 3} ? highlighted">Блоги друзей</span>
     </div>
 
 
     <div id = "block_container">
-        <div id="user_info">
-            <h3 th:text = "${user.nickname}" />
-            <div id="description">
-                <div class="title">
-                   <h4>Обо мне</h4>
-                </div>
-                <div class = "text">
-                    <p th:text = "${user.description}" />
-                </div>
-            </div>
+<!--        <div id="user_info">-->
+<!--            <h3 th:text = "${user.nickname}" />-->
+<!--            <div id="description">-->
+<!--                <div class="title">-->
+<!--                   <h4>Обо мне</h4>-->
+<!--                </div>-->
+<!--                <div class = "text">-->
+<!--                    <text th:text = "${user.description}" />-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <button>изменить</button>
-            <form id="logout" th:action="@{/logout}" method="post">
-                <input type="submit" value="покинуть"/>
-            </form>
-        </div>
+<!--            <div class="buttonBlock">-->
+<!--                <button onclick="changeDescriptionInfo()">изменить</button>-->
+<!--            </div>-->
+
+<!--            <form id="logout" th:action="@{/logout}" method="post">-->
+<!--                <input type="submit" value="Выйти"/>-->
+<!--            </form>-->
+<!--        </div>-->
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

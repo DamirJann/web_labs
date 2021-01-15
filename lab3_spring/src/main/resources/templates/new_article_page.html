@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<link href="/new_artical_page.css" rel="stylesheet">
+<body>
+
+
+<div class = "head">
+    <h1>Dead Journal</h1>
+</div>
+
+<div id = "block_container">
+    <div id="user_info">
+        <form id = "data">
+            <div id = "title">
+                <textarea th:name="title" placeholder="Заголовок статьи" form="data"></textarea>
+            </div>
+            <div  id = "description">
+                <textarea th:name="description" placeholder="Краткое описание" form="data"></textarea>
+            </div>
+            <div id = "full_text">
+                <textarea th:name="full_text" placeholder="Текст" form="data"></textarea>
+            </div>
+        </form>
+        <button id = "publishButton" th:onclick="publishArticle([[${user.nickname}]]);">
+            Опубликовать
+        </button>
+
+
+
+        <div id="back_button">
+            <form action='/dead-journal' method="post">
+                <button name="navigation_state" value="2">вернуться</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="/js/new_artical_page.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</html>

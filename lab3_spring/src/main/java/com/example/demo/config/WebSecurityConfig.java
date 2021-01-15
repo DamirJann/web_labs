@@ -24,6 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             "/swagger-ui/**",
             "/swagger-ui.html",
             "/home",
+            "dead-journal/abc",
             "/resources/**",
             "/v2/api-docs",
             "/configuration/ui",
@@ -48,11 +49,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/user/personal_page").permitAll()
+                .defaultSuccessUrl("/dead-journal").permitAll()
                 .and()
                 .logout()
                 .permitAll()
-                .logoutSuccessUrl("/home");
+                .logoutSuccessUrl("/dead-journal");
     }
 
     @Autowired
