@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.example.demo.entity.User;
 
@@ -25,6 +27,8 @@ public class UserService implements UserDetailsService {
     @Autowired
     ArticleRepository articleRepository;
 
+    @Autowired
+    BCryptPasswordEncoder passwordEncoder;
 
     public void signUp(){
 
@@ -60,7 +64,7 @@ public class UserService implements UserDetailsService {
     }
 
     public void signUp(String email, String password, String nickname){
-        User user = new User(email, password, nickname);
+        User user = new User(email, passwordEncoder.encode(password), nickname);
         userRepository.save(user);
     }
 

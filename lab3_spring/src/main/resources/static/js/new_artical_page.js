@@ -11,7 +11,7 @@ function publishArticle(nickname){
     });
     response.done(function (response){
         let form = $(`<form action='/dead-journal' method="post"  display="none" >
-            <input name="navigation_state" value="2">
+            <input name="navigation_state" value="2" type="hidden">
             </form>`);
         $("body").append(form);
         form.submit();
